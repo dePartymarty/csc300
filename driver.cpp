@@ -10,26 +10,29 @@ void getContents(string str){
    int count = 0, i;
    int n = str.length();
    
-   for (i = 0; i < n; i++) {
+   for (i = 1; i < n - 1; i++) {
       
       if (str[i] == ']') {
-         
-         count--;
-      }
-      
-      else if (str[i] == '[' && count != 0) {
+
          cout << str[i];
          count++;
       }
       
-      else if (str[i] != '[') {
-         cout << str[i];
+      else if (str[i] == '[' && count != 0) {
+         count--;
       }
       
+      else if (str[i] != ')') 
+         cout << str[i];
+   }
+      if (count != 0){
+      for (i = 0; i < count; i++)
+      cout << ")";
+      }
     
 
 }
-}
+
 
 
 
